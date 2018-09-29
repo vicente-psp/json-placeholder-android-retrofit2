@@ -52,6 +52,15 @@ public class UserActivity extends AppCompatActivity {
         username = txtUserName.getText().toString();
         data = txtData.getText().toString();
 
+
+        User user = User.builder()
+                .id(1)
+                .userName("")
+                .avatar(new byte[3])
+                .uuid("")
+                .data("")
+                .build();
+
         //Call<User> post = apiUserResouce.post(user);
 
 

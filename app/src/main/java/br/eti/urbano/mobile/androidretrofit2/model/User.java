@@ -2,6 +2,7 @@ package br.eti.urbano.mobile.androidretrofit2.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
  * @link https://blog.codecentric.de/en/2016/05/reducing-boilerplate-code-project-lombok/
  */
 @Data
-@Builder
+@EqualsAndHashCode(callSuper=false)
 public class User extends DefaultModel {
 
     private String uuid;
