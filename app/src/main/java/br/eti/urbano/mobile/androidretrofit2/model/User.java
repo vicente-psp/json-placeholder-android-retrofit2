@@ -22,7 +22,9 @@ public class User extends DefaultModel {
     private byte[] avatar;
 
     @Builder
-    public User(String uuid, String userName, byte[] avatar, Integer id, String data){
+    public User(String uuid, String userName,
+                byte[] avatar, Integer id,
+                String data){
         super(id,data);
         this.uuid = uuid;
         this.userName = userName;
