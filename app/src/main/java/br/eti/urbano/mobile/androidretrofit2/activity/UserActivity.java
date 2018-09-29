@@ -3,8 +3,10 @@ package br.eti.urbano.mobile.androidretrofit2.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -23,6 +25,8 @@ public class UserActivity extends AppCompatActivity {
     EditText txtId;
     EditText txtUserName;
     EditText txtData;
+    ListView listViewUser;
+    List<User> listUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class UserActivity extends AppCompatActivity {
         data = txtData.getText().toString();
 
 
-        User user = User.builder()
+        final User user = User.builder()
                 .id(id)
                 .userName(username)
                 .avatar(null)
@@ -54,6 +58,19 @@ public class UserActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                listViewUser = findViewById(R.id.listViewUser);
+
+                listUser = response.body();
+
+                listUser.forEach(u ->{
+
+                });
+
+                //Criar dados para adapter
+                HashMap<String,String> mapUser = new HashMap<String,String>();
+                mapUser.put("id",???);
+                mapUser.put("userName",???);
+
 
             }
 
