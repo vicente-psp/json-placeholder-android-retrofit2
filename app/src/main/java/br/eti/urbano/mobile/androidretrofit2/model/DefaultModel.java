@@ -10,6 +10,7 @@ import lombok.experimental.SuperBuilder;
  * Created by bruno on 28/09/18.
  */
 
+@Data
 @AllArgsConstructor
 public class DefaultModel {
     protected Integer id;

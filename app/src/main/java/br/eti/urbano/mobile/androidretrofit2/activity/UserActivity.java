@@ -4,8 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -27,6 +29,8 @@ public class UserActivity extends AppCompatActivity {
     EditText txtData;
     ListView listViewUser;
     List<User> listUser;
+    List<HashMap<String,String>> colecao =
+            new ArrayList<HashMap<String,String>>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,15 +67,26 @@ public class UserActivity extends AppCompatActivity {
                 listUser = response.body();
 
                 listUser.forEach(u ->{
+                    //Criar dados para adapter
+                    HashMap<String,String> mapUser = new HashMap<String,String>();
+                    mapUser.put("id",String.valueOf(u.getId()));
+                    mapUser.put("username",u.getUserName());
 
+                    colecao.add(mapUser);
                 });
 
-                //Criar dados para adapter
-                HashMap<String,String> mapUser = new HashMap<String,String>();
-                mapUser.put("id",???);
-                mapUser.put("userName",???);
+                String[] from = {"id","username"};
+                int[] to = {R.id.txtId,R.id.txtUserName};
 
+                SimpleAdapter simpleAdapter =
+                        new SimpleAdapter(
+                                getApplicationContext(),
+                                colecao,
+                                R.layout.user,
+                                from,
+                                to);
 
+                listViewUser.setAdapter(simpleAdapter);
             }
 
             @Override

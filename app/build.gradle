@@ -9,6 +9,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        // Enabling multidex support.
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -36,6 +38,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+
+    implementation 'com.android.support:multidex:1.0.3'
 
     compileOnly 'org.projectlombok:lombok:1.18.2'
     annotationProcessor 'org.projectlombok:lombok:1.18.2'
