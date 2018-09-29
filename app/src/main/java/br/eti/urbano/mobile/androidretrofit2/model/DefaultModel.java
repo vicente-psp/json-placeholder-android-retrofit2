@@ -9,9 +9,11 @@ import lombok.Data;
  */
 
 @Data
-@Builder
 @AllArgsConstructor
 public class DefaultModel {
-    private Integer id;
-    private String data;
+    protected Integer id;
+    protected String data;
+
+    public DefaultModel() {
+    }
 }

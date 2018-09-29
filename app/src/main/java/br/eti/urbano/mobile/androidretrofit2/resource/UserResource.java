@@ -18,15 +18,15 @@ import retrofit2.http.PUT;
 
 public interface UserResource {
 
-    @GET("api/email")
+    @GET("api/user")
     Call<List<User>> get();
 
-    @POST("api/email/add")
+    @POST("api/user")
     Call<User> post(@Body User user);
 
-    @PUT("api/email/change")
+    @PUT("api/user")
     Call<User> put(@Body User user);
 
-    @DELETE("api/email/delete")
+    @DELETE("api/user")
     Call<Void> delete(@Body User user);
 }
