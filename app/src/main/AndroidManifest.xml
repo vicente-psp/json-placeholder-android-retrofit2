@@ -19,4 +19,7 @@
         <activity android:name=".activity.UserActivity"></activity>
     </application>
 
+    <!--permission to access internet from your app -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 </manifest>

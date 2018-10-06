@@ -38,6 +38,7 @@
         <Button
             android:id="@+id/btnAddUser"
             android:layout_width="match_parent"
+            android:onClick="addUser"
             android:layout_height="wrap_content"
             android:text="@string/btn_txt_addUser" />
 

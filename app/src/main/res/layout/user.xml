@@ -14,24 +14,26 @@
             android:id="@+id/txtId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ems="12"
             android:layout_weight="1" />
 
         <TextView
             android:id="@+id/txtUserName"
             android:layout_width="wrap_content"
+            android:ems="12"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
         <ImageButton
             android:id="@+id/imgBtnEdit"
-            android:layout_width="6dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/edit" />
 
         <ImageButton
             android:id="@+id/imgBtnRemove"
-            android:layout_width="6dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/remove" />

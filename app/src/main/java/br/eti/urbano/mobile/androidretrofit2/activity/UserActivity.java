@@ -2,6 +2,7 @@ package br.eti.urbano.mobile.androidretrofit2.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -36,21 +37,6 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
-
-        String username,data;
-        Integer id;
-        id = Integer.parseInt(txtId.getText().toString());
-        username = txtUserName.getText().toString();
-        data = txtData.getText().toString();
-
-
-        final User user = User.builder()
-                .id(id)
-                .userName(username)
-                .avatar(null)
-                .uuid(UUID.randomUUID().toString())
-                .data(data)
-                .build();
 
         //tem o contexto da aplicação (application)
         //PASSO 4
@@ -91,9 +77,27 @@ public class UserActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
-
+                Toast.makeText(getApplicationContext(), t.toString(),Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void addUser(View view) {
+
+        String username,data;
+        Integer id;
+        id = Integer.parseInt(txtId.getText().toString());
+        username = txtUserName.getText().toString();
+        data = txtData.getText().toString();
+
+
+        final User user = User.builder()
+                .id(id)
+                .userName(username)
+                .avatar(null)
+                .uuid(UUID.randomUUID().toString())
+                .data(data)
+                .build();
 
         Call<User> post = apiUserResouce.post(user);
         post.enqueue(new Callback<User>() {
@@ -118,7 +122,7 @@ public class UserActivity extends AppCompatActivity {
         put.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                
+
             }
 
             @Override
@@ -139,11 +143,5 @@ public class UserActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
-
     }
 }
