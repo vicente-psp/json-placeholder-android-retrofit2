@@ -1,4 +1,4 @@
-package br.eti.urbano.mobile.androidretrofit2.activity;
+package br.com.student.json_placeholder_android_retrofit2.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,12 +11,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 
-import br.eti.urbano.mobile.androidretrofit2.R;
-import br.eti.urbano.mobile.androidretrofit2.bootstrap.APIClient;
-import br.eti.urbano.mobile.androidretrofit2.model.User;
-import br.eti.urbano.mobile.androidretrofit2.resource.UserResource;
+import br.com.student.json_placeholder_android_retrofit2.R;
+import br.com.student.json_placeholder_android_retrofit2.bootstrap.APIClient;
+import br.com.student.json_placeholder_android_retrofit2.model.User;
+import br.com.student.json_placeholder_android_retrofit2.resource.UserResource;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -54,15 +53,16 @@ public class UserActivity extends AppCompatActivity {
 
                 listUser.forEach(u ->{
                     //Criar dados para adapter
-                    HashMap<String,String> mapUser = new HashMap<String,String>();
-                    mapUser.put("id",String.valueOf(u.getId()));
-                    mapUser.put("username",u.getUserName());
+                    HashMap<String, String> mapUser = new HashMap<String, String>();
+                    mapUser.put("id", String.valueOf(u.getId()));
+                    mapUser.put("username", u.getUsername());
+                    mapUser.put("email", u.getEmail());
 
                     colecao.add(mapUser);
                 });
 
-                String[] from = {"id","username"};
-                int[] to = {R.id.txtId,R.id.txtUserName};
+                String[] from = {"id", "username", "email"};
+                int[] to = {R.id.txtId, R.id.txtUserName, R.id.txtEmail};
 
                 SimpleAdapter simpleAdapter =
                         new SimpleAdapter(
@@ -93,10 +93,7 @@ public class UserActivity extends AppCompatActivity {
 
         final User user = User.builder()
                 .id(id)
-                .userName(username)
-                .avatar(null)
-                .uuid(UUID.randomUUID().toString())
-                .data(data)
+                .username(username)
                 .build();
 
         Call<User> post = apiUserResouce.post(user);

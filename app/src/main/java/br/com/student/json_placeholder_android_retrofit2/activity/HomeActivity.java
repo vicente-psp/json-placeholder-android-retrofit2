@@ -1,4 +1,4 @@
-package br.eti.urbano.mobile.androidretrofit2.activity;
+package br.com.student.json_placeholder_android_retrofit2.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import br.eti.urbano.mobile.androidretrofit2.R;
+import br.com.student.json_placeholder_android_retrofit2.R;
 
 
 public class HomeActivity extends AppCompatActivity {

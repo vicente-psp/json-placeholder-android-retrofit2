@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "br.eti.urbano.mobile.androidretrofit2"
+        applicationId "br.com.student.json_placeholder_android_retrofit2"
         minSdkVersion 24
         targetSdkVersion 28
         versionCode 1

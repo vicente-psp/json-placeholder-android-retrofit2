@@ -1,9 +1,8 @@
-package br.eti.urbano.mobile.androidretrofit2.resource;
+package br.com.student.json_placeholder_android_retrofit2.resource;
 
 import java.util.List;
 
-import br.eti.urbano.mobile.androidretrofit2.interfaces.GenericInterfaceOperations;
-import br.eti.urbano.mobile.androidretrofit2.model.User;
+import br.com.student.json_placeholder_android_retrofit2.model.User;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -18,15 +17,15 @@ import retrofit2.http.PUT;
 
 public interface UserResource {
 
-    @GET("user")
+    @GET("users")
     Call<List<User>> get();
 
-    @POST("user")
+    @POST("users")
     Call<User> post(@Body User user);
 
-    @PUT("user")
+    @PUT("users")
     Call<User> put(@Body User user);
 
-    @DELETE("user")
+    @DELETE("users")
     Call<Void> delete(@Body User user);
 }

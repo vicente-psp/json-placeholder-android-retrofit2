@@ -1,4 +1,4 @@
-package br.eti.urbano.mobile.androidretrofit2.bootstrap;
+package br.com.student.json_placeholder_android_retrofit2.bootstrap;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -13,7 +13,8 @@ public class APIClient {
 
     private static Retrofit retrofit = null;
     //DOMINIO+CONTEXTO
-    public static final String ENDPOINT = "http://urbano.eti.br:4567/api/";
+//    public static final String ENDPOINT = "http://urbano.eti.br:4567/api/";
+    public static final String ENDPOINT = "https://jsonplaceholder.typicode.com/";
 
     public static Retrofit getClient() {
 

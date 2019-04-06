@@ -1,4 +1,4 @@
-package br.eti.urbano.mobile.androidretrofit2.interfaces;
+package br.com.student.json_placeholder_android_retrofit2.interfaces;
 
 import java.util.List;
 
